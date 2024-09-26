@@ -11,7 +11,7 @@ public class ConverterInitialCommit {
 		System.out.println("4 Yen");
 		System.out.println("5 Australian Dollar");
 		System.out.println("6 Canadian Dollar");
-		String again = "Y";
+		String again = "Y"; //Ask if the user wants to redo the program or not
 		
 		do
 		{

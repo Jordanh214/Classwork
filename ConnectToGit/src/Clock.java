@@ -16,7 +16,7 @@ public class Clock {
 
 	}
 	
-	public void setHour()
+	public void setHour(int hours)
 	{
 		hr=hours;
 	}

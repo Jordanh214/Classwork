@@ -6,29 +6,63 @@ public class usdConversions { //Conversions for the U.S Dollar
 	private double jpyConversionRate = 146.22; //Amount of Japanese Yen per U.S Dollar
 	private double audConversionRate = 1.46; //Amount of Australian Dollars per U.S Dollar
 	
-	public double CAD(double amount) //Constructor for converting USD into CAD
+	private double currencyAmount; //instance variable for amount
+	private String currencySymbol; //instance variable that sets the type of currency for each conversion
+	private String currencyName; //instance variable that adds the abbreviation for each currency
+	private double convertedAmount; //instance variable to hold the converted amount
+	
+	public double setCurrencyAmount(double amount)
 	{
-		return amount * cadConversionRate;
+		currencyAmount = amount; //gets the user input and gives it to the currencyAmount variable
+		return currencyAmount; //returns the currency amount variable
 	}
 	
-	public double GBP(double amount) //Constructor for converting USD into CAD
+
+	public double CAD() //Constructor for converting USD into CAD
 	{
-		return amount * gbpConversionRate;
+		currencyName="CAD";
+		currencySymbol ="C$";
+		convertedAmount = currencyAmount * cadConversionRate; //Converts the amount of usd to cad
+		return convertedAmount; // returns the converted amount
 	}
 	
-	public double EUR(double amount) //Constructor for converting USD into CAD
+	public double GBP() //Constructor for converting USD into CAD
 	{
-		return amount * eurConversionRate;
+		currencyName="GBP";
+		currencySymbol = "£";
+		convertedAmount = currencyAmount * gbpConversionRate; //Converts the amount of usd to gbp
+		return convertedAmount; // returns the converted amount
 	}
 	
-	public double JPY(double amount) //Constructor for converting USD into JPY
+	public double EUR() //Constructor for converting USD into CAD
 	{
-		return amount * jpyConversionRate;
+		currencyName = "EUR";
+		currencySymbol = "€";
+		convertedAmount = currencyAmount * eurConversionRate; //Converts the amount of usd to eur
+		return convertedAmount; // returns the converted amount
+		
 	}
 	
-	public double AUD(double amount) //Constructor for converting USD into AUD
+	public double JPY() //Constructor for converting USD into JPY
 	{
-		return amount * audConversionRate;
+		currencyName = "JPY";
+		currencySymbol = "¥";
+		convertedAmount = currencyAmount * jpyConversionRate; //Converts the amount of usd to jpy
+		return convertedAmount; // returns the converted amount
+	}
+	
+	public double AUD() //Constructor for converting USD into AUD
+	{
+		currencyName = "AUD";
+		currencySymbol = "A$";
+		convertedAmount = currencyAmount * audConversionRate; //Converts the amount of usd to aud
+		return convertedAmount; // returns the converted amount
+	}
+	
+	public String toString()
+	{
+		String conversionFormat = String.format("Converted Amount: %s %.2f %s", currencySymbol, convertedAmount, currencyName);
+		return conversionFormat;
 	}
 
 }

@@ -22,36 +22,42 @@ public class ConverterInitialCommit {
 		int choice = reader.nextInt(); 
 		System.out.println("Enter the amount you would like to convert: "); //Amount being converted
 		double amount = reader.nextDouble();
+		currency1.setCurrencyAmount(amount); //sets the amount that the user inputs into the amount in the usdConversions setCurrencyAmount constructor
 		
 		if (begin==1 && choice==2) //US Dollar to other currencies set up
 		{
 			System.out.println("US Dollar to Euro");//print statement to make sure it works
 			System.out.println("*******************");
-			System.out.println("Converted Amount: €"+ currency1.EUR(amount)+" EUR"); // Grabs the information from the EUR constructor and prints it.
+			currency1.EUR(); //performs the conversion of the user input
+			System.out.println(currency1.toString()); // Grabs the information from the EUR constructor and prints it.
 		}
 		else if (begin==1 && choice==3)
 		{
 			System.out.println("US Dollar to British Pound");//print statement to make sure it works
 			System.out.println("*******************");
-			System.out.println("Converted Amount: £"+ currency1.GBP(amount)+" GBP"); // Grabs the information from the GBP constructor and prints it.
+			currency1.GBP();
+			System.out.println(currency1.toString()); // Grabs the information from the GBP constructor and prints it.
 		}
 		else if (begin==1 && choice==4)
 		{
 			System.out.println("US Dollar to Japanese Yen");//print statement to make sure it works
 			System.out.println("*******************");
-			System.out.println("Converted Amount: ¥"+ currency1.JPY(amount)+" JPY"); // Grabs the information from the JPY constructor and prints it.
+			currency1.JPY();
+			System.out.println(currency1.toString()); // Grabs the information from the JPY constructor and prints it.
 		}
 		else if (begin==1 && choice==5)
 		{
 			System.out.println("US Dollar to Australian Dollar"); //print statement to make sure it works
 			System.out.println("*******************");
-			System.out.println("Converted Amount:  A$"+ currency1.AUD(amount)+" AUD"); // Grabs the information from the AUD constructor and prints it.
+			currency1.AUD();
+			System.out.println(currency1.toString()); // Grabs the information from the AUD constructor and prints it.
 		}
 		else if (begin==1 && choice==6)
 		{
 			System.out.println("US Dollar to Canadian Dollar");//print statement to make sure it works
 			System.out.println("*******************");
-			System.out.println("Converted Amount: C$"+ currency1.CAD(amount)+" CAD"); // Grabs the information from the CAD constructor and prints it.
+			currency1.CAD();
+			System.out.println(currency1.toString()); // Grabs the information from the CAD constructor and prints it.
 		}
 	System.out.println("Do you want to convert another currency (Y/N) ?"); //Repeat or not?
 		again = reader.next();

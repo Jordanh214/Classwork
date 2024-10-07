@@ -16,6 +16,9 @@ public class clockDriver {
 		System.out.println(yourClock);
 		yourClock.printTime();
 		myClock.printTime();
+		System.out.print("/n");
+		System.out.println(myClock.toString());
+	
 		
 
 	}

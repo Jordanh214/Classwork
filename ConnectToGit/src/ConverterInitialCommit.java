@@ -28,35 +28,35 @@ public class ConverterInitialCommit {
 		{
 			System.out.println("US Dollar to Euro");//print statement to make sure it works
 			System.out.println("*******************");
-			currency1.EUR(); //performs the conversion of the user input
+			currency1.EUR(); //performs the conversion of the user input to give each of the instance variables a value
 			System.out.println(currency1.toString()); // Grabs the information from the EUR constructor and prints it.
 		}
 		else if (begin==1 && choice==3)
 		{
 			System.out.println("US Dollar to British Pound");//print statement to make sure it works
 			System.out.println("*******************");
-			currency1.GBP();
+			currency1.GBP();//performs the conversion of the user input to give each of the instance variables a value
 			System.out.println(currency1.toString()); // Grabs the information from the GBP constructor and prints it.
 		}
 		else if (begin==1 && choice==4)
 		{
 			System.out.println("US Dollar to Japanese Yen");//print statement to make sure it works
 			System.out.println("*******************");
-			currency1.JPY();
+			currency1.JPY();//performs the conversion of the user input to give each of the instance variables a value
 			System.out.println(currency1.toString()); // Grabs the information from the JPY constructor and prints it.
 		}
 		else if (begin==1 && choice==5)
 		{
 			System.out.println("US Dollar to Australian Dollar"); //print statement to make sure it works
 			System.out.println("*******************");
-			currency1.AUD();
+			currency1.AUD();//performs the conversion of the user input to give each of the instance variables a value
 			System.out.println(currency1.toString()); // Grabs the information from the AUD constructor and prints it.
 		}
 		else if (begin==1 && choice==6)
 		{
 			System.out.println("US Dollar to Canadian Dollar");//print statement to make sure it works
 			System.out.println("*******************");
-			currency1.CAD();
+			currency1.CAD();//performs the conversion of the user input to give each of the instance variables a value
 			System.out.println(currency1.toString()); // Grabs the information from the CAD constructor and prints it.
 		}
 	System.out.println("Do you want to convert another currency (Y/N) ?"); //Repeat or not?

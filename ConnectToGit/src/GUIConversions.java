@@ -115,8 +115,9 @@ public class GUIConversions {
 		JButton btnConvert = new JButton("Convert");
 		btnConvert.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			double Amt = Amt;
-			textConvertedAmt.setText(Amt.ToString);
+			String inputAmount = textCurrencyNum.getText();
+			double Amt = Double.parseDouble(inputAmount);
+			textConvertedAmt.setText(String.valueOf(Amt)); //https://www.quora.com/What-is-the-use-of-the-String-ValueOf-function-in-Java
 			}
 		});
 		btnConvert.setFont(new Font("Calibri", Font.BOLD, 18));

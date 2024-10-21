@@ -5,6 +5,7 @@ public class ConverterInitialCommit {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		usdConversions currency1 = new usdConversions(); //Connects the usdConversions class to the main class
+		GUIConversions gui = new GUIConversions();
 		Scanner reader = new Scanner(System.in); //Scanner for multiple inputs
 		System.out.println("1 US Dollar");  //Currency options
 		System.out.println("2 Euro");

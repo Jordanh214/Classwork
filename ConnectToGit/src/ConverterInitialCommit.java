@@ -6,6 +6,7 @@ public class ConverterInitialCommit {
 		// TODO Auto-generated method stub
 		usdConversions currency1 = new usdConversions(); //Connects the usdConversions class to the main class
 		eurConversions currency2= new eurConversions(); //connects the eurConversions class to the main
+		gbpConversions currency3= new gbpConversions(); //connects the gbpConversions class to the main
 		GUIConversions gui = new GUIConversions();
 		Scanner reader = new Scanner(System.in); //Scanner for multiple inputs
 		System.out.println("1 US Dollar");  //Currency options
@@ -24,8 +25,9 @@ public class ConverterInitialCommit {
 		int choice = reader.nextInt(); 
 		System.out.println("Enter the amount you would like to convert: "); //Amount being converted
 		double amount = reader.nextDouble();
-		currency1.setCurrencyAmount(amount); //sets the amount that the user inputs into the amount in the usdConversions setCurrencyAmount method
-		currency2.setCurrencyAmount(amount); // sets the amount that the user inputs into the amount variable in the eurConversions setCurrencyAMount method
+		currency1.setCurrencyAmount(amount); //sets the amount that the user inputs into the amount variable in the usdConversions setCurrencyAmount method
+		currency2.setCurrencyAmount(amount); //sets the amount that the user inputs into the amount variable in the eurConversions setCurrencyAmount method
+		currency3.setCurrencyAmount(amount); //sets the amount that the user inputs into the amount variable in the eurConversions setCurrencyAmount method
 		
 		if (begin==1 && choice==2) //US Dollar to other currencies set up
 		{
@@ -73,21 +75,64 @@ public class ConverterInitialCommit {
 		{
 			System.out.println("Euro to British Pound");
 			System.out.println("*******************");
+			currency2.GBP();
+			System.out.println(currency2.toString());
 		}
 		else if (begin==2 && choice==4)
 		{
 			System.out.println("Euro to Japanese Yen");
 			System.out.println("*******************");
+			currency2.JPY();
+			System.out.println(currency2.toString());
 		}
 		else if (begin==2 && choice==5)
 		{
 			System.out.println("Euro to Australian Dollar");
 			System.out.println("*******************");
+			currency2.AUD();
+			System.out.println(currency2.toString());
 		}
 		else if (begin==2 && choice==6)
 		{
 			System.out.println("Euro to Canadian Dollar");
 			System.out.println("*******************");
+			currency2.CAD();
+			System.out.println(currency2.toString());
+		}
+		else if (begin==3 && choice==1)
+		{
+			System.out.println("British Pound to US Dollar");
+			System.out.println("******************");
+			currency3.USD();
+			System.out.println(currency3.toString());
+		}
+		else if (begin==3 && choice==2)
+		{
+			System.out.println("British Pound to Euro");
+			System.out.println("******************");
+			currency3.EUR();
+			System.out.println(currency3.toString());
+		}
+		else if (begin==3 && choice==4)
+		{
+			System.out.println("British Pound to Japanese Yen");
+			System.out.println("******************");
+			currency3.JPY();
+			System.out.println(currency3.toString());
+		}
+		else if (begin==3 && choice==5)
+		{
+			System.out.println("British Pound to Australian Dollar");
+			System.out.println("******************");
+			currency3.AUD();
+			System.out.println(currency3.toString());
+		}
+		else if (begin==3 && choice==6)
+		{
+			System.out.println("British Pound to Canadian Dollar");
+			System.out.println("******************");
+			currency3.CAD();
+			System.out.println(currency3.toString());
 		}
 	System.out.println("Do you want to convert another currency (Y/N) ?"); //Repeat or not?
 		again = reader.next();

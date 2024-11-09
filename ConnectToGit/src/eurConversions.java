@@ -1,10 +1,10 @@
- 
-public class usdConversions { //Conversions for the U.S Dollar
-	private double cadConversionRate = 1.36; //Amount of Canadian Dollars per U.S Dollar
-	private double gbpConversionRate = 0.76; //Amount of Pound per U.S Dollar
-	private double eurConversionRate = 0.91; //Amount of Euro per U.S Dollar
-	private double jpyConversionRate = 146.22; //Amount of Japanese Yen per U.S Dollar
-	private double audConversionRate = 1.46; //Amount of Australian Dollars per U.S Dollar
+
+public class eurConversions {
+	private double cadConversionRate = 1.49; //Amount of Canadian Dollars per Euro
+	private double gbpConversionRate = 0.83; //Amount of Pound per Euro
+	private double usdConversionRate = 1.07; //Amount of U.S Dollar per Euro
+	private double jpyConversionRate = 163.73; //Amount of Japanese Yen per Euro
+	private double audConversionRate = 1.63; //Amount of Australian Dollars per Euro
 	
 	private double currencyAmount; //instance variable for amount
 	private String currencySymbol; //instance variable that sets the type of currency for each conversion
@@ -18,11 +18,11 @@ public class usdConversions { //Conversions for the U.S Dollar
 	}
 	
 
-	public double CAD() //Constructor for converting USD into CAD //https://www.youtube.com/watch?v=h8EnX87gX9o&ab_channel=AJ looked up for constructor help
+	public double CAD()
 	{
 		currencyName="CAD"; // Abbreviation for the canadian dollar
 		currencySymbol ="C$"; //sets the currency symbol to the Canadian dollar symbol
-		convertedAmount = currencyAmount * cadConversionRate; //Converts the amount of usd to cad
+		convertedAmount = currencyAmount * cadConversionRate; //Converts the amount of eur to cad
 		return convertedAmount; // returns the converted amount
 	}
 	
@@ -30,15 +30,15 @@ public class usdConversions { //Conversions for the U.S Dollar
 	{
 		currencyName="GBP"; //abbreviation for British Pound Sterling
 		currencySymbol = "£"; //sets the currency symbol to the pound symbol
-		convertedAmount = currencyAmount * gbpConversionRate; //Converts the amount of usd to gbp
+		convertedAmount = currencyAmount * gbpConversionRate; //Converts the amount of eur to gbp
 		return convertedAmount; // returns the converted amount
 	}
 	
-	public double EUR() //Constructor for converting USD into EUR
+	public double USD() //Constructor for converting USD into EUR
 	{
-		currencyName = "EUR"; //abbreviation for Euro
-		currencySymbol = "€"; //sets the currency symbol to the euro symbol
-		convertedAmount = currencyAmount * eurConversionRate; //Converts the amount of usd to eur
+		currencyName = "USD"; //abbreviation for Euro
+		currencySymbol = "$"; //sets the currency symbol to the euro symbol
+		convertedAmount = currencyAmount * usdConversionRate; //Converts the amount of  to eur
 		return convertedAmount; // returns the converted amount
 		
 	}
@@ -64,6 +64,5 @@ public class usdConversions { //Conversions for the U.S Dollar
 		String conversionFormat = String.format("Converted Amount: %s %.2f %s", currencySymbol, convertedAmount, currencyName); //formats the objects for printing.
 		return conversionFormat; //returns the conversionFormat variable to the output for toString in the main
 	}
-	
 
 }

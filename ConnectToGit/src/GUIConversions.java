@@ -14,10 +14,10 @@ import java.awt.event.ActionEvent;
 public class GUIConversions {
 
 	private JFrame frame;
-	private JTextField textStarting;
-	private JTextField textConversion;
-	private JTextField textConvertedAmt;
-	private JTextField textCurrencyNum;
+	private JTextField textStarting; //Starting Value that the user inputs to select which currency they are starting with
+	private JTextField textConversion; //Selection of currency the user would like to convert to
+	private JTextField textConvertedAmt; //The converted amount after converting to the user's chosen currency
+	private JTextField textCurrencyNum;  //Starting amount that the user would like to convert
 
 
 	/**
@@ -27,7 +27,7 @@ public class GUIConversions {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GUIConversions window = new GUIConversions();
+					GUIConversions window = new GUIConversions(); //Creating the GUI Window
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -110,11 +110,11 @@ public class GUIConversions {
 		textCurrencyNum.setBounds(287, 199, 290, 20);
 		frame.getContentPane().add(textCurrencyNum);
 		
-		JButton btnConvert = new JButton("Convert");
+		JButton btnConvert = new JButton("Convert"); //Button the user clicks to convert their chosen currency
 		btnConvert.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			String inputAmount = textCurrencyNum.getText();//Gets the text (User Input) from the textCurrencyNum instance variable
-			double Amt = Double.parseDouble(inputAmount);//Creates the double Amt to hold the user input from earlier which is held in the textCurrencyNu, Instance variable
+			double Amt = Double.parseDouble(inputAmount);//Creates the double Amt to hold the user input from earlier which is held in the textCurrencyNum, Instance variable
 			textConvertedAmt.setText(String.valueOf(Amt));//Changes the double Amt into a string (https://www.quora.com/What-is-the-use-of-the-String-ValueOf-function-in-Java)
 			}
 		});

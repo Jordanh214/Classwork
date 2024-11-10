@@ -1,8 +1,10 @@
+import java.io.FileNotFoundException;
+import java.util.*;
 import java.util.Scanner;
 
 public class ConverterInitialCommit {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException { 
 		// TODO Auto-generated method stub
 		usdConversions currency1= new usdConversions(); //Connects the usdConversions class to the main 
 		eurConversions currency2= new eurConversions(); //Connects the eurConversions class to the main
@@ -10,6 +12,11 @@ public class ConverterInitialCommit {
 		jpyConversions currency4= new jpyConversions(); //Connects the jpyConversions class to the main
 		audConversions currency5= new audConversions(); //Connects the audConversions class to the main
 		cadConversions currency6= new cadConversions();
+		
+		public class converterInitialCommit {
+			private static ArrayList<String> conversionHistory= new ArrayList<>();
+			
+		}
 		
 		GUIConversions gui = new GUIConversions();
 		Scanner reader = new Scanner(System.in); //Scanner for multiple inputs
@@ -246,6 +253,9 @@ public class ConverterInitialCommit {
 			currency6.AUD();
 			System.out.println(currency6.toString());
 		}
+		else
+			System.out.println("Invalid Input. Please Convert using the currencies provided. (1-6)");
+		
 	System.out.println("Do you want to convert another currency (Y/N) ?"); //Repeat or not?
 		again = reader.next();
 		}while (again.equals("Y"));

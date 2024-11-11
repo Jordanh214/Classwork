@@ -21,6 +21,10 @@ public class GUIConversions {
 	private JTextField textConvertedAmt; //The converted amount after converting to the user's chosen currency
 	private JTextField textCurrencyNum;  //Starting amount that the user would like to convert
 	
+	public class converterInitialCommit { //https://sentry.io/answers/how-to-create-a-file-and-write-to-it-in-java/#:~:text=java%20file.,file%20will%20not%20be%20overwritten.
+		public static ArrayList<String> conversionHistory= new ArrayList<>(); //ArrayList to hold the conversions and write them to a file
+	}
+	
 	private usdConversions currency1= new usdConversions(); //Calling the usdConversions class to work the conversions with the GUI
 	private eurConversions currency2= new eurConversions(); //Calling the eurConversions class to work the conversions with the GUI
 	private gbpConversions currency3= new gbpConversions(); //Calling the gbpConversions class to work the conversions with the GUI
@@ -48,6 +52,7 @@ public class GUIConversions {
 
 	/**
 	 * Create the application.
+	 * @return 
 	 */
 	public GUIConversions() {
 		initialize();
@@ -133,9 +138,14 @@ public class GUIConversions {
 					double amount1=Double.parseDouble(textCurrencyNum.getText()); //Gets the text and makes the double amount1 the user input
 					String convertedResult=convertCurrency(userCurrency, convertCurrency, amount1); //Variable for holding the converted result. Calls convert method
 					textConvertedAmt.setText(convertedResult);
+					converterInitialCommit.conversionHistory.add(convertedResult); //Adds each result to the ArrayList
+					writeToFile(); //calls the writeToFile method to store the previous conversions
 				} catch (NumberFormatException ex) { //If the user does not put in a number, it will print Invalid input
 	            System.out.println("Invalid input. Please enter a number for conversions.");
-			}
+			} catch (IOException e1) { // Eclipse auto generated catch to handle any errors from the user not putting in a valid number
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 		}
 	});
 		btnConvert.setFont(new Font("Calibri", Font.BOLD, 18));
@@ -330,9 +340,18 @@ public class GUIConversions {
 
 		return result;
 	}
-
+	
+	public void writeToFile() throws IOException {
+		FileWriter writer=new FileWriter("ConversionHistory.txt", true);
+		for (String conversion: converterInitialCommit.conversionHistory) 
+		{
+			writer.write(conversion + "\n");
+		}
+		writer.close();
+		{
 			
-		
-		
+		}
+	}
+	
 		
 }

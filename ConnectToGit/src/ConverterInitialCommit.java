@@ -12,11 +12,7 @@ public class ConverterInitialCommit {
 		jpyConversions currency4= new jpyConversions(); //Connects the jpyConversions class to the main
 		audConversions currency5= new audConversions(); //Connects the audConversions class to the main
 		cadConversions currency6= new cadConversions();
-		
-		public class converterInitialCommit {
-			private static ArrayList<String> conversionHistory= new ArrayList<>();
 			
-		}
 		
 		GUIConversions gui = new GUIConversions();
 		Scanner reader = new Scanner(System.in); //Scanner for multiple inputs
@@ -55,28 +51,28 @@ public class ConverterInitialCommit {
 			System.out.println("US Dollar to British Pound");//print statement to make sure it works
 			System.out.println("*******************");
 			currency1.GBP();//performs the conversion of the user input to give each of the instance variables a value
-			System.out.println(currency1.toString()); // Grabs the information from the GBP constructor and prints it.
+			System.out.println(currency1.toString()); // Grabs the information from the GBP method and prints it.
 		}
 		else if (begin==1 && choice==4)
 		{
 			System.out.println("US Dollar to Japanese Yen");//print statement to make sure it works
 			System.out.println("*******************");
 			currency1.JPY();//performs the conversion of the user input to give each of the instance variables a value
-			System.out.println(currency1.toString()); // Grabs the information from the JPY constructor and prints it.
+			System.out.println(currency1.toString()); // Grabs the information from the JPY method and prints it.
 		}
 		else if (begin==1 && choice==5)
 		{
 			System.out.println("US Dollar to Australian Dollar"); //print statement to make sure it works
 			System.out.println("*******************");
 			currency1.AUD();//performs the conversion of the user input to give each of the instance variables a value
-			System.out.println(currency1.toString()); // Grabs the information from the AUD constructor and prints it.
+			System.out.println(currency1.toString()); // Grabs the information from the AUD method and prints it.
 		}
 		else if (begin==1 && choice==6)
 		{
 			System.out.println("US Dollar to Canadian Dollar");//print statement to make sure it works
 			System.out.println("*******************");
 			currency1.CAD();//performs the conversion of the user input to give each of the instance variables a value
-			System.out.println(currency1.toString()); // Grabs the information from the CAD constructor and prints it.
+			System.out.println(currency1.toString()); // Grabs the information from the CAD method and prints it.
 		}
 		else if (begin==2 && choice==1)
 		{

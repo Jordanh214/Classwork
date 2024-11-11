@@ -2,3 +2,7 @@ Converted Amount: € 27.30 EUR
 Converted Amount: A$ 29.20 AUD
 Converted Amount: A$ 29.20 AUD
 Converted Amount: ¥ 221715.20 JPY
+Invalid Input. Please try again.
+Invalid Input. Please try again.
+Converted Amount: C$ 0.19 CAD
+Converted Amount: A$ 40.28 AUD

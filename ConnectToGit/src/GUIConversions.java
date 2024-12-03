@@ -12,6 +12,8 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 
 public class GUIConversions {
 
@@ -31,6 +33,7 @@ public class GUIConversions {
 	private jpyConversions currency4= new jpyConversions(); //Calling the jpyConversions class to work the conversions with the GUI
 	private audConversions currency5= new audConversions(); //Calling the audConversions class to work the conversions with the GUI
 	private cadConversions currency6= new cadConversions(); //Calling the cadConversions class to work the conversions with the GUI
+	private Action action = new SwingAction();
 	
 
 
@@ -63,6 +66,7 @@ public class GUIConversions {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setTitle("Currency Converter");
 		frame.getContentPane().setBackground(new Color(132, 132, 255)); //Background and layout
 		frame.setBounds(100, 100, 597, 433);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -127,7 +131,6 @@ public class GUIConversions {
 		textCurrencyNum.setHorizontalAlignment(SwingConstants.CENTER);
 		textCurrencyNum.setColumns(10);
 		textCurrencyNum.setBounds(286, 252, 291, 20);
-		frame.getContentPane().add(textCurrencyNum);
 		
 		JButton btnConvert = new JButton("Convert"); //Button the user clicks to convert their chosen currency
 		btnConvert.addActionListener(new ActionListener() {
@@ -139,7 +142,7 @@ public class GUIConversions {
 					String convertedResult=convertCurrency(userCurrency, convertCurrency, amount1); //Variable for holding the converted result. Calls convert method
 					textConvertedAmt.setText(convertedResult);
 					conversionHistory.add(convertedResult); //Adds each conversion result to the conversionHistory ArrayList
-					writeToFile(); //calls the writeToFile method to store the previous conversions
+					writeToFile(); //calls the writeToFile method to store the previous conversions and clear the text fields
 				} catch (NumberFormatException ex) { //If the user does not put in a number, it will print Invalid input
 	            System.out.println("Invalid input. Please enter a number for conversions.");
 			} catch (IOException e1) { // Eclipse auto generated catch to handle any errors from the user not putting in a valid number
@@ -148,9 +151,24 @@ public class GUIConversions {
 				}
 		}
 	});
+		frame.getContentPane().add(textCurrencyNum);
 		btnConvert.setFont(new Font("Calibri", Font.BOLD, 18));
-		btnConvert.setBounds(235, 307, 120, 23);
+		btnConvert.setBounds(172, 308, 120, 23);
 		frame.getContentPane().add(btnConvert);
+		
+		JButton btnReset = new JButton("Reset");
+		btnReset.setAction(action);
+		btnReset.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textConvertedAmt.setText("");
+				textStarting.setText("");
+				textCurrencyNum.setText("");
+				textConversion.setText("");
+			}
+		});
+		btnReset.setFont(new Font("Calibri", Font.BOLD, 18));
+		btnReset.setBounds(304, 307, 107, 24);
+		frame.getContentPane().add(btnReset);
 		
 
 	}
@@ -355,10 +373,14 @@ public class GUIConversions {
 		{
 			
 		}
+		
 	}
-	
-		//Links used for help: 
-		// 1. https://stackoverflow.com/questions/7974154/how-do-i-print-messages-to-the-screen-in-my-java-gui
-		// 2. https://sentry.io/answers/how-to-create-a-file-and-write-to-it-in-java/#:~:text=java%20file.,file%20will%20not%20be%20overwritten.
-		// 3. https://www.geeksforgeeks.org/exceptions-in-java/
+	private class SwingAction extends AbstractAction {
+		public SwingAction() {
+			putValue(NAME, "Reset");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+		}
+	}
 }

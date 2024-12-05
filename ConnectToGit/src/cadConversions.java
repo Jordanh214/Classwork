@@ -1,10 +1,10 @@
 
 public class cadConversions {
-	private double audConversionRate = 1.09; //Amount of Canadian Dollars per Australian Dollar
+	private double audConversionRate = 1.10; //Amount of Canadian Dollars per Australian Dollar
 	private double gbpConversionRate = 0.56; //Amount of Pound per Australian Dollar
-	private double eurConversionRate = 0.67; //Amount of Euro per Australian Dollar
-	private double jpyConversionRate = 109.76; //Amount of Japanese Yen per Australian Dollar
-	private double usdConversionRate = 0.72; //Amount of US Dollars per Australian Dollar
+	private double eurConversionRate = 0.68; //Amount of Euro per Australian Dollar
+	private double jpyConversionRate = 106.18; //Amount of Japanese Yen per Australian Dollar
+	private double usdConversionRate = 0.71; //Amount of US Dollars per Australian Dollar
 	
 	private double currencyAmount; //instance variable for amount
 	private String currencySymbol; //instance variable that sets the type of currency for each conversion
@@ -61,7 +61,7 @@ public class cadConversions {
 	
 	public String toString()
 	{
-		String conversionFormat = String.format("Converted Amount: %s %.2f %s", currencySymbol, convertedAmount, currencyName); //formats the objects for printing.
+		String conversionFormat = String.format("Converted Amount: %s %,.2f %s", currencySymbol, convertedAmount, currencyName); //formats the objects for printing.
 		return conversionFormat; //returns the conversionFormat variable to the output for toString in the main
 	}
 	

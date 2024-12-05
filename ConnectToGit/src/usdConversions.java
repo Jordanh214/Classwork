@@ -1,10 +1,10 @@
  
 public class usdConversions { //Conversions for the U.S Dollar
-	private double cadConversionRate = 1.36; //Amount of Canadian Dollars per U.S Dollar
-	private double gbpConversionRate = 0.76; //Amount of Pound per U.S Dollar
-	private double eurConversionRate = 0.91; //Amount of Euro per U.S Dollar
-	private double jpyConversionRate = 146.22; //Amount of Japanese Yen per U.S Dollar
-	private double audConversionRate = 1.46; //Amount of Australian Dollars per U.S Dollar
+	private double cadConversionRate = 1.41; //Amount of Canadian Dollars per U.S Dollar
+	private double gbpConversionRate = 0.79; //Amount of Pound per U.S Dollar
+	private double eurConversionRate = 0.95; //Amount of Euro per U.S Dollar
+	private double jpyConversionRate = 149.26; //Amount of Japanese Yen per U.S Dollar
+	private double audConversionRate = 1.54; //Amount of Australian Dollars per U.S Dollar
 	
 	private double currencyAmount; //instance variable for amount
 	private String currencySymbol; //instance variable that sets the type of currency for each conversion
@@ -61,7 +61,7 @@ public class usdConversions { //Conversions for the U.S Dollar
 	
 	public String toString() //https://stackoverflow.com/questions/6431933/how-to-format-strings-in-java, //https://www.geeksforgeeks.org/java-string-format-method-with-examples/
 	{
-		String conversionFormat = String.format("Converted Amount: %s %.2f %s", currencySymbol, convertedAmount, currencyName); //formats the objects for printing.
+		String conversionFormat = String.format("Converted Amount: %s %,.2f %s", currencySymbol, convertedAmount, currencyName); //formats the objects for printing.
 		return conversionFormat; //returns the conversionFormat variable to the output for toString in the main
 	}
 	

@@ -1,10 +1,10 @@
 
 public class jpyConversions {
-	private double cadConversionRate = 0.0091; //Amount of Canadian Dollar per Japanese Yen
-	private double eurConversionRate = 0.0061; //Amount of Euro per Japanese Yen
-	private double usdConversionRate = 0.0066; //Amount of U.S Dollar per Japanese Yen
-	private double gbpConversionRate = 0.0051; //Amount of British Pound per Japanese Yen
-	private double audConversionRate = 0.0099; //Amount of Australian Dollars per Japanese Yen
+	private double cadConversionRate = 0.0094; //Amount of Canadian Dollar per Japanese Yen
+	private double eurConversionRate = 0.0064; //Amount of Euro per Japanese Yen
+	private double usdConversionRate = 0.0067; //Amount of U.S Dollar per Japanese Yen
+	private double gbpConversionRate = 0.0053; //Amount of British Pound per Japanese Yen
+	private double audConversionRate = 0.010; //Amount of Australian Dollars per Japanese Yen
 	
 	private double currencyAmount; //instance variable for amount
 	private String currencySymbol; //instance variable that sets the type of currency for each conversion
@@ -61,7 +61,7 @@ public class jpyConversions {
 	
 	public String toString() 
 	{
-		String conversionFormat = String.format("Converted Amount: %s %.2f %s", currencySymbol, convertedAmount, currencyName); //formats the objects for printing.
+		String conversionFormat = String.format("Converted Amount: %s %,.2f %s", currencySymbol, convertedAmount, currencyName); //formats the objects for printing.
 		return conversionFormat; //returns the conversionFormat variable to the output for toString in the main
 	}
 

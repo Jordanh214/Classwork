@@ -1,10 +1,10 @@
 
 public class gbpConversions {
-	private double cadConversionRate = 1.79; //Amount of Canadian Dollar per British Pound
+	private double cadConversionRate = 1.78; //Amount of Canadian Dollar per British Pound
 	private double eurConversionRate = 1.20; //Amount of Euro per British Pound
-	private double usdConversionRate = 1.29; //Amount of U.S Dollar per British Pound
-	private double jpyConversionRate = 196.92; //Amount of Japanese Yen per British Pound
-	private double audConversionRate = 1.96; //Amount of Australian Dollars per British Pound
+	private double usdConversionRate = 1.27; //Amount of U.S Dollar per British Pound
+	private double jpyConversionRate = 189.19; //Amount of Japanese Yen per British Pound
+	private double audConversionRate = 1.95; //Amount of Australian Dollars per British Pound
 	
 	private double currencyAmount; //instance variable for amount
 	private String currencySymbol; //instance variable that sets the type of currency for each conversion
@@ -61,7 +61,7 @@ public class gbpConversions {
 	
 	public String toString() 
 	{
-		String conversionFormat = String.format("Converted Amount: %s %.2f %s", currencySymbol, convertedAmount, currencyName); //formats the objects for printing.
+		String conversionFormat = String.format("Converted Amount: %s %,.2f %s", currencySymbol, convertedAmount, currencyName); //formats the objects for printing.
 		return conversionFormat; //returns the conversionFormat variable to the output for toString in the main
 	}
 

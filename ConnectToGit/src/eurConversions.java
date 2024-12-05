@@ -1,10 +1,10 @@
 
 public class eurConversions {
-	private double cadConversionRate = 1.49; //Amount of Canadian Dollars per Euro
+	private double cadConversionRate = 1.48; //Amount of Canadian Dollars per Euro
 	private double gbpConversionRate = 0.83; //Amount of Pound per Euro
-	private double usdConversionRate = 1.07; //Amount of U.S Dollar per Euro
-	private double jpyConversionRate = 163.73; //Amount of Japanese Yen per Euro
-	private double audConversionRate = 1.63; //Amount of Australian Dollars per Euro
+	private double usdConversionRate = 1.05; //Amount of U.S Dollar per Euro
+	private double jpyConversionRate = 157.07; //Amount of Japanese Yen per Euro
+	private double audConversionRate = 1.62; //Amount of Australian Dollars per Euro
 	
 	private double currencyAmount; //instance variable for amount
 	private String currencySymbol; //instance variable that sets the type of currency for each conversion
@@ -61,7 +61,7 @@ public class eurConversions {
 	
 	public String toString() //https://stackoverflow.com/questions/6431933/how-to-format-strings-in-java, //https://www.geeksforgeeks.org/java-string-format-method-with-examples/
 	{
-		String conversionFormat = String.format("Converted Amount: %s %.2f %s", currencySymbol, convertedAmount, currencyName); //formats the objects for printing.
+		String conversionFormat = String.format("Converted Amount: %s %,.2f %s", currencySymbol, convertedAmount, currencyName); //formats the objects for printing.
 		return conversionFormat; //returns the conversionFormat variable to the output for toString in the main
 	}
 

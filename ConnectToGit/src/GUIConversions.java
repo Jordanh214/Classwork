@@ -3,6 +3,7 @@ import java.io.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.util.*;
@@ -39,7 +40,7 @@ public class GUIConversions {
 	private audConversions currency5= new audConversions(); //Calling the audConversions class to work the conversions with the GUI
 	private cadConversions currency6= new cadConversions(); //Calling the cadConversions class to work the conversions with the GUI
 	private Action action = new SwingAction();
-	DecimalFormat formatter = new DecimalFormat("#,###.00");
+	DecimalFormat formatter = new DecimalFormat("#,###.00"); //Formatter? Never actually used
 	
 
 
@@ -149,7 +150,8 @@ public class GUIConversions {
 					textConvertedAmt.setText(convertedResult);
 					conversionHistory.add(convertedResult); //Adds each conversion result to the conversionHistory ArrayList
 					writeToFile(); //calls the writeToFile method to store the previous conversions and clear the text fields
-					insertConversion();
+					insertConversion(); //calls the insertConversion method to send the conversion to the connected database
+					readFromDatabase();
 				} catch (NumberFormatException ex) { //If the user does not put in a number, it will print Invalid input
 	            System.out.println("Invalid input. Please enter a number for conversions.");
 			} catch (IOException e1) { // Eclipse auto generated catch to handle any errors from the user not putting in a valid number
@@ -387,21 +389,42 @@ public class GUIConversions {
 			
 		}
 		
-		public void insertConversion() throws IOException, SQLException, ClassNotFoundException {
+		public void insertConversion() throws IOException, SQLException, ClassNotFoundException { //Method to send conversion into Database
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/currencyconverter","root",""); //Connects to database
+			
+			String conv=textConvertedAmt.getText(); //Gets the converted amount
+			
+			 String sql = "INSERT INTO conversionhistory (Conversion) VALUES (?)"; // Inserts the converted amount into the database
+			
+
+              PreparedStatement statement = con.prepareStatement(sql); //prepares the sql statement to connect and send to the sql database
+
+              statement.setString(1, conv); //Sets the value for the Conversion row to the converted amount
+              
+              statement.executeUpdate(); //Updates the database with the conversion
+			
+		}
+		
+		public void readFromDatabase() throws IOException, SQLException, ClassNotFoundException {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/currencyconverter","root","");
+			FileWriter writer=new FileWriter("DatabaseReport.txt", true); 
+			//true makes it so that each conversion can continue to be added to the file without overwriting it. 
 			
-			String conv=textConvertedAmt.getText();
+			PreparedStatement statement=con.prepareStatement("Select * from conversionhistory");
 			
-			 String sql = "INSERT INTO conversionhistory (Conversion) VALUES (?)";
-			 System.out.println(conv);
+			ResultSet result=statement.executeQuery();
 			
-
-              PreparedStatement statement = con.prepareStatement(sql);
-
-              statement.setString(1, conv);
-              
-              statement.executeUpdate();
+			
+			while(result.next())
+			{
+				writer.write(result.getString(1) + "\t" + result.getString(2) + "\n");
+				System.out.println(result.getString(1) + "\t" + result.getString(2));
+				
+			}
+			
+			writer.close();
 			
 		}
 		
@@ -410,7 +433,7 @@ public class GUIConversions {
 		/**
 		 * 
 		 */
-		private static final long serialVersionUID = 1L;
+		private static final long serialVersionUID = 1L; //Default added to prevent error
 		public SwingAction() {
 			putValue(NAME, "Reset");
 			putValue(SHORT_DESCRIPTION, "Some short description");

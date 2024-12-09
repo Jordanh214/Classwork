@@ -1,13 +1,10 @@
-Converted Amount: $ 0.67 USD
-Converted Amount: $ 0.67 USD
-Converted Amount: A$ 154.00 AUD
+
+Converted Amount: £ 790.00 GBP
+Converted Amount: A$ 4,574.66 AUD
+Converted Amount: £ 20.44 GBP
+Converted Amount: $ 21.00 USD
+Converted Amount: $ 25.40 USD
+Converted Amount: $ 21.00 USD
 Converted Amount: € 19.00 EUR
-Converted Amount: € 19.00 EUR
-Converted Amount: € 19.00 EUR
-Converted Amount: € 19.00 EUR
-Converted Amount: € 21.85 EUR
-Converted Amount: € 21.85 EUR
-Converted Amount: € 1.90 EUR
-Converted Amount: € 21.85 EUR
-Converted Amount: € 19.00 EUR
+Converted Amount: € 14.25 EUR
 Converted Amount: € 19.00 EUR
